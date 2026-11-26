@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="uz"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Davlatlar</title>
+<link rel="manifest" href="manifest.webmanifest"><meta name="theme-color" content="#fbf6e6">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%232563eb%22/><text x=%2250%22 y=%2271%22 font-size=%2260%22 text-anchor=%22middle%22>🌍</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bl:#2f5fa8;--dk:#1a3a73;--rd:#e24a4a}
+*{box-sizing:border-box}html{margin:0;background:#fbf6e6}body{margin:0}
+body{font:16px/1.45 Lora,Georgia,"Times New Roman",serif;color:#22304d}
+#pp{position:fixed;inset:0;z-index:-1;background-color:#fbf6e6;background-image:linear-gradient(90deg,transparent 38px,var(--rd) 38px,var(--rd) 40px,transparent 40px),linear-gradient(rgba(110,160,215,.35) 1px,transparent 1px),linear-gradient(90deg,rgba(110,160,215,.35) 1px,transparent 1px);background-size:100% 100%,26px 26px,26px 26px}
+.v{max-width:560px;margin:0 auto;padding:calc(14px + env(safe-area-inset-top,0px)) 16px calc(40px + env(safe-area-inset-bottom,0px)) 54px}
+h1,h2,h3{font-family:"Dancing Script","Segoe Script","Brush Script MT",cursive;color:var(--dk);margin:0}
+h1{font-size:44px;line-height:1.1}h2{font-size:30px;margin:6px 0 10px}h3{font-size:24px}
+.hd{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px}.hd p{margin:2px 0 0;color:#4a5a7a}
+.rb{width:46px;height:46px;border-radius:50%;border:2px solid var(--bl);background:#fff;display:flex;align-items:center;justify-content:center;padding:0}
+.card{background:#fff;border:2px solid var(--bl);border-radius:16px;padding:14px 16px;margin-bottom:12px}
+.mn{cursor:pointer}.mn:active{background:#eaf2ff}.rc{color:#5b6b8c;font-size:14px;margin-top:2px}
+.tb{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;color:#4a5a7a;font-size:15px}
+.tb a{color:var(--bl);font-weight:600;cursor:pointer}
+.qc{background:#fff;border:2px solid #cfdcf2;border-left:7px solid var(--bl);border-radius:12px;padding:14px 16px;margin:10px 0;font-size:19px}
+.o,.m,.b{font:inherit;color:var(--dk);background:#fff;border:2px solid var(--bl);border-radius:14px;padding:12px 14px;display:block;width:100%;text-align:left;margin-top:9px}
+.b{text-align:center;font-weight:600;margin-top:12px}.m{text-align:center;font-size:14px;margin:0 0 8px;padding:10px 6px}
+.ok,.dn{background:#e8f5e9!important;border-color:#66bb6a!important;color:#1b5e20!important}.no{background:#fdecea!important;border-color:#e57373!important;color:#8e2424!important}.sel{background:#e3f0ff}
+select,input{font:inherit;width:100%;padding:11px;border:2px solid var(--bl);border-radius:12px;background:#fff;color:var(--dk);margin-bottom:6px}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px}
+.c{display:inline-block;margin:3px;padding:2px 10px;border:1px solid var(--bl);border-radius:99px;font-size:14px;background:#fff}
+details{margin:8px 0}summary{font-weight:600;cursor:pointer}
+.fc{text-align:center;background:#fff;border:2px dashed var(--bl);border-radius:14px;padding:18px 10px;margin:10px 0;min-height:120px;display:flex;flex-direction:column;justify-content:center;cursor:pointer}
+.fc .n{font:700 28px "Dancing Script",cursive;color:var(--dk)}
+.row{display:flex;gap:10px}.row .b{margin-top:6px}.mu{color:#5b6b8c;font-size:14px}
+.r2{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #dbe5f5}
+</style></head><body><div id="pp"></div>
+<div class="v" id="v_h">
+<div class="hd"><div><h1>Davlatlar</h1><p id="sub"></p></div><button class="rb" data-go="s" aria-label="Statistika"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#2f5fa8" stroke-width="2.4" stroke-linecap="round"><path d="M5 20V11M12 20V4M19 20v-6"/></svg></button></div>
+<div class="card mn" data-go="t"><h3>Davlat testi</h3><div class="rc" id="r_t"></div></div>
+<div class="card mn" data-go="m"><h3>Moslashtirish</h3><div class="rc" id="r_m"></div></div>
+<div class="card mn" data-go="z"><h3>Zaif tomonlarim</h3><div class="rc" id="r_z"></div></div>
+<div class="card mn" data-go="l"><h3>Davlatlar ro’yxati</h3><div class="rc" id="r_l"></div></div>
+</div>
+<div class="v" id="v_t" hidden><div class="tb"><a data-go="h">‹ Bosh sahifa</a><span id="ts_st"></span></div><h2>Davlat testi</h2><div id="t"></div></div>
+<div class="v" id="v_m" hidden><div class="tb"><a data-go="h">‹ Bosh sahifa</a><span id="ms_st"></span></div><h2>Moslashtirish</h2><div id="m"></div></div>
+<div class="v" id="v_z" hidden><div class="tb"><a data-go="h">‹ Bosh sahifa</a><span></span></div><h2>Zaif tomonlarim</h2><div class="card" id="zw"></div><div id="zf"></div></div>
+<div class="v" id="v_l" hidden><div class="tb"><a data-go="h">‹ Bosh sahifa</a><span></span></div><h2>Davlatlar ro’yxati</h2><div id="l"></div></div>
+<div class="v" id="v_s" hidden><div class="tb"><a data-go="h">‹ Bosh sahifa</a><span></span></div><h2>Natijalarim</h2><div class="card" id="stt"></div></div>
+<script>
+const L={A:"Mutlaq monarxiya",S:"Saylanadigan monarxiya",T:"Teokratik monarxiya",C:"Cheklangan monarxiya",P:"Prezidentlik respublikasi",Y:"Aralash respublika",R:"Parlamentar respublika",B:"Bir partiyali respublika"};
+const raw={
+A:"Bruney,Qatar,Saudiya Arabistoni,Ummon,Esvatini",
+S:"Andorra,BAA,Malayziya",
+T:"Vatikan",
+C:"Antigua va Barbuda,Avstraliya,Bagama Orollari,Bahrayn,Belgiya,Beliz,Buyuk Britaniya,Daniya,Grenada,Ispaniya,Iordaniya,Kambodja,Kanada,Quvayt,Lesoto,Lixtenshteyn,Lyuksemburg,Marokash,Monako,Niderlandiya,Norvegiya,Papua-Yangi Gvineya,Sent-Kits va Nevis,Sent-Lyusiya,Sent-Vinsent va Grenadinlar,Solomon Orollari,Shvetsiya,Tailand,Tonga,Tuvalu,Yangi Zelandiya,Yaponiya",
+P:"AQSH,Angola,Argentina,Benin,Boliviya,Braziliya,Burundi,Chili,Dominikana Respublikasi,Ekvador,Filippin,Gambiya,Gana,Gonduras,Gvatemala,Indoneziya,Janubiy Sudan,Jibuti,Kamerun,Keniya,Kuba,Kolumbiya,Komor Orollari,Kongo Respublikasi,Kosta-Rika,Kot-d’Ivuar,Qozog’iston,Qirg’iziston,Liberiya,Malavi,Maldiv Orollari,Meksika,Mozambik,Nigeriya,Nikaragua,O’zbekiston,Panama,Paragvay,Peru,Ruanda,Salvador,Seyshel Orollari,Sierra-Leone,Tojikiston,Turkmaniston,Uganda,Urugvay,Zambiya,Zimbabve,Belarus,Rossiya,Venesuela",
+Y:"Jazoir,Armaniston,Ozarbayjon,Burkina-Faso,Kabo-Verde,Markaziy Afrika,Chad,Kongo Demokratik,Xorvatiya,Misr,Ekvatorial Gvineya,Eritreya,Fransiya,Gabon,Ukraina,Gvineya,Gvineya-Bisau,Gayana,Gaiti,Madagaskar,Mali,Mavritaniya,Mo’g’uliston,Chernogoriya,Namibiya,Niger,Polsha,Portugaliya,Ruminiya,Turkiya,San-Tome va Prinsipi,Senegal,Janubiy Koreya,Shri-Lanka,Sudan,Togo,Tunis,Vyetnam",
+R:"Albaniya,Avstriya,Bangladesh,Barbados,Bosniya va Gersegovina,Botsvana,Bolgariya,Chexiya,Dominika,Efiopiya,Fidji,Finlandiya,Germaniya,Gretsiya,Hindiston,Vengriya,Islandiya,Iroq,Irlandiya,Isroil,Italiya,Kiribati,Latviya,Livan,Litva,Malta,Mavrikiy,Mikroneziya,Moldova,Nauru,Nepal,Shimoliy Makedoniya,Pokiston,Samoa,San-Marino,Serbiya,Singapur,Slovakiya,Sloveniya,Somali,JAR,Surinam,Shveytsariya,Sharqiy Timor,Trinidad va Tobago,Vanuatu,Eron,Gruziya",
+B:"Xitoy,Laos,KXDR"};
+const FED=new Set("AQSH,Argentina,Avstraliya,Avstriya,Belgiya,BAA,Bosniya va Gersegovina,Braziliya,Efiopiya,Germaniya,Hindiston,Iroq,Janubiy Sudan,Kanada,Komor Orollari,Malayziya,Meksika,Mikroneziya,Nepal,Nigeriya,Pokiston,Rossiya,Sent-Kits va Nevis,Somali,Sudan,Shveytsariya,Venesuela".split(","));
+const C=[];for(const k in raw)raw[k].split(",").forEach(n=>C.push({n,f:k,s:FED.has(n)?"Federativ":"Unitar"}));
+
+const $=id=>document.getElementById(id),rnd=a=>a[Math.floor(Math.random()*a.length)];
+const shuf=a=>a.map(x=>[Math.random(),x]).sort((x,y)=>x[0]-y[0]).map(x=>x[1]);
+const SN=Object.assign({F:"Federativ"},L),mem=k=>k=="F"?C.filter(c=>c.s=="Federativ"):C.filter(c=>c.f==k);
+const so=(id,cur,ex="")=>`<select id="${id}">${ex}<option value="all"${cur=="all"?" selected":""}>Barcha davlatlar</option>`+Object.keys(SN).map(k=>`<option value="${k}"${cur==k?" selected":""}>${SN[k]} (${mem(k).length})</option>`).join("")+"</select>";
+let weak=new Set(),st={bt:0,bm:null,ta:0,tc:0};
+try{weak=new Set(JSON.parse(localStorage.weak||"[]"));st=Object.assign(st,JSON.parse(localStorage.st||"{}"))}catch(e){}
+const sw=()=>{try{localStorage.weak=JSON.stringify([...weak]);localStorage.st=JSON.stringify(st)}catch(e){}};
+const bad=n=>{weak.add(n);sw();wk()},good=n=>{if(weak.delete(n)){sw();wk()}};
+function go(v){document.querySelectorAll(".v").forEach(e=>e.hidden=e.id!="v_"+v);scrollTo(0,0);
+if(v=="h")home();if(v=="t"){T={i:0,s:0,w:[]};ts()}if(v=="m")mi();if(v=="l")lo();if(v=="z"){ZS=weak.size?"weak":"all";wk();zi()}if(v=="s")stats()}
+document.querySelectorAll("[data-go]").forEach(e=>e.onclick=()=>go(e.dataset.go));
+function home(){$("sub").textContent=`${C.length} ta davlat. Bo’limni tanlang.`;
+$("r_t").textContent=st.bt?`Rekord ${st.bt}/10`:"Hali boshlanmagan";
+$("r_m").textContent=st.bm===null?"Hali boshlanmagan":`Rekord: ${st.bm} xato`;
+$("r_z").textContent=`${weak.size} ta`;$("r_l").textContent=`${C.length} ta davlat`}
+function stats(){const r=(a,b)=>`<div class="r2"><span>${a}</span><b>${b}</b></div>`;
+$("stt").innerHTML=r("Test rekordi",st.bt+"/10")+r("Moslashtirish rekordi",st.bm===null?"—":st.bm+" xato")+r("Test aniqligi",st.ta?Math.round(st.tc/st.ta*100)+"%":"—")+r("Zaif davlatlar",weak.size+" ta")+r("Jami davlatlar",C.length)+r("Federativ / Unitar",mem("F").length+" / "+(C.length-mem("F").length))}
+/* Test */
+let TS="all",T={i:0,s:0,w:[]};
+function ts(){const el=$("t"),sl=so("tsel",TS);
+if(T.i>=10){if(!T.f){T.f=1;st.ta+=10;st.tc+=T.s;st.bt=Math.max(st.bt,T.s);sw()}
+$("ts_st").textContent="Natija";
+el.innerHTML=sl+`<div class="card"><h3>Natija: ${T.s} / 10</h3>`+(T.w.length?T.w.map(c=>`<div>• ${c.n}: ${c.s}, ${L[c.f]}</div>`).join(""):"Hammasi to’g’ri! 🎉")+`</div><button class="b" id="ag">Yana test</button>`;
+$("ag").onclick=()=>{T={i:0,s:0,w:[]};ts()}}
+else{const c=rnd(TS=="all"?C:mem(TS)),isF=Math.random()<.35;let o,a,q;
+if(isF){q=`<b>${c.n}</b><br>davlat tuzilishi qanday?`;o=["Federativ","Unitar"];a=c.s}else{q=`<b>${c.n}</b><br>boshqaruv shakli qanday?`;a=L[c.f];o=shuf([a,...shuf(Object.values(L).filter(x=>x!=a)).slice(0,3)])}
+let d=0;$("ts_st").textContent=`${T.i+1} / 10 · To’g’ri: ${T.s}`;
+el.innerHTML=sl+`<div class="qc">${q}</div>`+o.map(x=>`<button class="o">${x}</button>`).join("")+`<div id="tn"></div>`;
+el.querySelectorAll(".o").forEach(b=>b.onclick=()=>{if(d)return;d=1;const ok=b.textContent==a;if(ok){T.s++;good(c.n)}else{T.w.push(c);bad(c.n);b.classList.add("no")}
+el.querySelectorAll(".o").forEach(x=>{if(x.textContent==a)x.classList.add("ok")});
+$("tn").innerHTML=`<button class="b" id="nb">${T.i==9?"Natija":"Keyingisi"}</button>`;$("nb").onclick=()=>{T.i++;ts()}})}
+$("tsel").onchange=e=>{TS=e.target.value;T={i:0,s:0,w:[]};ts()}}
+/* Moslash */
+let M;
+function mi(){const ks=shuf(Object.keys(L)).slice(0,6);M={cs:ks.map(k=>rnd(mem(k))),fs:shuf(ks),l:null,d:0,e:0,dk:[]};md()}
+function md(){$("ms_st").textContent=`Xato: ${M.e}`;$("m").innerHTML=`<div class="mu">Avval davlatni, so’ng boshqaruv shaklini bosing.</div><div class="cols"><div>`+M.cs.map((c,i)=>`<button class="m${c.d?" dn":""}${M.l===i?" sel":""}" data-l="${i}">${c.n}</button>`).join("")+`</div><div>`+M.fs.map(k=>`<button class="m${M.dk.includes(k)?" dn":""}" data-r="${k}">${L[k]}</button>`).join("")+`</div></div>`+(M.d==6?`<div class="card"><h3>Tayyor! 🎉</h3><div class="mu">Xato: ${M.e}</div></div><button class="b" id="nm">Yangi o’yin</button>`:"");
+$("m").querySelectorAll("[data-l]").forEach(b=>b.onclick=()=>{const i=+b.dataset.l;if(M.cs[i].d)return;M.l=i;md()});
+$("m").querySelectorAll("[data-r]").forEach(b=>b.onclick=()=>{if(M.l===null)return;const k=b.dataset.r,c=M.cs[M.l];
+if(c.f==k){c.d=1;M.d++;M.dk.push(k);M.l=null;if(M.d==6){st.bm=st.bm===null?M.e:Math.min(st.bm,M.e);sw()}md()}else{M.e++;bad(c.n);b.classList.add("no");setTimeout(()=>{M.l=null;md()},350)}});
+const nm=$("nm");if(nm)nm.onclick=mi}
+/* Ro'yxat */
+let H=false,RV=new Set();
+$("l").innerHTML=`<input id="q" type="search" placeholder="Davlat qidirish..."><button class="b" id="hb" style="margin-top:0">Yashirish (yodlash)</button><div id="lo"></div>`;
+function lo(){const t=$("q").value.toLowerCase();let h="";
+for(const k of ["F",...Object.keys(L)]){const a=mem(k).filter(c=>c.n.toLowerCase().includes(t));
+if(a.length)h+=`<div class="card"><details${t||H?" open":""}><summary>${SN[k]} (${a.length})</summary>`+a.map(c=>H&&!RV.has(c.n)?`<span class="c" data-n="${c.n}">• • •</span>`:`<span class="c">${c.n}</span>`).join("")+`</details></div>`}
+$("lo").innerHTML=h;$("lo").querySelectorAll("[data-n]").forEach(e=>e.onclick=()=>{RV.add(e.dataset.n);lo()})}
+$("q").oninput=lo;$("hb").onclick=()=>{H=!H;RV=new Set();$("hb").textContent=H?"Ko’rsatish":"Yashirish (yodlash)";lo()};
+/* Zaif tomon */
+let ZS="weak",D=[],fi=0,fl=0;
+function wk(){const a=C.filter(c=>weak.has(c.n));$("zw").innerHTML=a.length?`<div class="mu">Zaif davlatlar (${a.length}):</div>`+a.map(c=>`<span class="c">${c.n}</span>`).join(""):`<div class="mu">Hozircha zaif tomon yo’q. Test va moslashtirishda xato qilgan davlatlaringiz shu yerda to’planadi.</div>`}
+function zi(){D=shuf(ZS=="weak"?C.filter(c=>weak.has(c.n)):ZS=="all"?C:mem(ZS));fi=0;fl=0;zd()}
+function zd(){const el=$("zf"),sl=so("zsel",ZS,`<option value="weak"${ZS=="weak"?" selected":""}>Faqat zaiflar</option>`);
+if(!D.length)el.innerHTML=sl+`<div class="card">Karta yo’q 🎉</div>`;
+else{const c=D[fi];el.innerHTML=sl+`<div class="fc" id="fc"><div class="n">${c.n}</div>`+(fl?`<div>Tuzilishi: <b>${c.s}</b></div><div>Boshqaruv: <b>${L[c.f]}</b></div>`:`<div class="mu">Javob uchun bosing</div>`)+`</div><div class="row"><button class="b" id="no">Bilmadim</button><button class="b" id="yes">Bilaman</button></div><div class="mu">${fi+1} / ${D.length}</div>`;
+const nx=()=>{fl=0;fi++;if(fi>=D.length)zi();else zd()};
+$("fc").onclick=()=>{fl=!fl;zd()};$("yes").onclick=()=>{good(c.n);nx()};$("no").onclick=()=>{bad(c.n);nx()}}
+$("zsel").onchange=e=>{ZS=e.target.value;zi()}}
+home();
+try{if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js")}catch(e){}
+</script></body></html>
